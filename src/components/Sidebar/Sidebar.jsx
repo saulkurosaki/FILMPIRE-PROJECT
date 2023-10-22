@@ -26,6 +26,10 @@ const Sidebar = ({ setMobileOpen }) => {
     const { genreIdOrCategoryName } = useSelector((state) => state.currentGenreOrCategory);
     const dispatch = useDispatch();
 
+    useEffect(() => {
+        setMobileOpen(false);
+    }, [genreIdOrCategoryName]);
+
   return (
     <>
         <Link to='/' className={classes.imageLink}>
